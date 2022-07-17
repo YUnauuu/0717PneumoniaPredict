@@ -27,7 +27,7 @@ def upload_file():
         image = cv2.imread("./static/"+filename)
         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
         img = cv2.merge([gray,gray,gray])
-        img.resize((150,150,3))
+        img.resize((100,100,3))
         img = np.asarray(img, dtype="float32") #need to transfer to np to reshape
         img = img.reshape(1, img.shape[0], img.shape[1], img.shape[2]) #rgb to reshape to 1,100,100,3
         pred=model.predict(img)
